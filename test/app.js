@@ -1,5 +1,6 @@
-var app = require('./app');
+var app = require('../app');
 var request = require('supertest').agent(app.listen());
+var mongoose = require('mongoose');
 
 describe('The server', function (done) {
 
@@ -42,6 +43,19 @@ describe('The server', function (done) {
 				res.body.should.have.property('key', 'YA-1234567890');
 				done();
 			};
+		});
+	});
+
+	describe('MongoDB Fundamentals', function () {
+		it('should connect to db server successfully', function (done) {
+			var Test = mongoose.model('test', { test: String });
+			Test.findOne(function (err, test) {
+				if (err) done(err);
+				mongoose.connection.readyState.should.eql(1);
+				done();
+			});
+			/*mongoose.connection.readyState.should.eql(1);
+			done();*/
 		});
 	});
 });

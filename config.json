@@ -1,0 +1,13 @@
+{
+	"mongo": {
+		"url": "mongodb://182.92.155.221:27017/yeeyan_test",
+		"connection": {
+			"user": "yeeyan",
+			"pass": "y33y@#_t3st",
+			"server": {
+				"poolSize": 64,
+				"socketOptions": { "keepAlive": 1 }
+			}
+		}
+	}
+}

@@ -2,14 +2,14 @@ var app = module.exports = require('koa')();
 var mongoose = require('mongoose');
 var fs = require('fs');
 
-fs.readFile('config.json', function (err, data) {
+/*fs.readFile('config.json', function (err, data) {
 	if (err) throw err;
 	var config = JSON.parse(data.toString());
 	mongoose.connect(config.mongo.url, config.mongo.connection, function (m) {
 		//console.log(JSON.stringify(config));
 		//console.log(mongoose.connection.readyState);
 	});
-});
+});*/
 
 app.use(function* (next) {
 	if (this.path !== '/') return yield next;

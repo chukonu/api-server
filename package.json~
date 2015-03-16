@@ -14,7 +14,7 @@
 		"sinon-chai": "latest"
 	},
 	"scripts": {
-		"test": "mocha --harmony --recursive --require should",
+		"test": "mocha --harmony --require should",
 		"start": "node --harmony app.js"
 	}
 }
